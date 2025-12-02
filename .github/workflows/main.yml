@@ -41,7 +41,7 @@ jobs:
           node-version: 18
       - run: npm install
       - run: npm test
-    notify:
+  notify:
     runs-on: ubuntu-latest
     needs: actor-check
     if: failure()
@@ -50,7 +50,7 @@ jobs:
         run: |
           curl -X POST "https://api.brevo.com/v3/smtp/email" \
           -H "accept: application/json" \
-          -H "api-key: ${{ secrets.BREVO_API_KEY }}" \
+          -H "api-key: ${{ secrets.BREVO }}" \
           -H "content-type: application/json" \
           -d '{
             "sender": {"name":"GitHub Actions","email":"lhannouni05@gmail.com"},
