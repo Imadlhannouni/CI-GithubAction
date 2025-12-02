@@ -20,6 +20,7 @@ jobs:
           echo "Autorized"
   build:
     runs-on: ubuntu-latest
+    needs: actor-checks
     steps:
       - uses: actions/checkout@v3
 
@@ -29,7 +30,6 @@ jobs:
           node-version: 18
           cache: 'npm'
       - run: npm install
-      - run: npm run start
   test:
     runs-on: ubuntu-latest
     needs: build
