@@ -2,9 +2,9 @@ name: ci-project
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull-request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   actor-checks:
@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: "Check if action is autorized"
         run: |
-          allowed="imad"
+          allowed="Imadlhannouni"
           if [[ ${{ github.actor }} != "$allowed" ]]; then
             echo "Unautorized actor"
             exit 1
