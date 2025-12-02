@@ -17,3 +17,4 @@ jobs:
             echo "Unautorized actor"
             exit 1
           fi
+          echo "Autorized"
