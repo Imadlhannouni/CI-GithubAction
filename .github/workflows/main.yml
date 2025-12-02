@@ -43,7 +43,7 @@ jobs:
       - run: npm test
   notify:
     runs-on: ubuntu-latest
-    needs: actor-check
+    needs: actor-checks
     if: failure()
     steps:
       - name: Send email via Brevo API
