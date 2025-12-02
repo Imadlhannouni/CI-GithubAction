@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: "Check if action is autorized"
         run: |
-          allowed="Imadlhannouni"
+          allowed="wwwe"
           if [[ ${{ github.actor }} != "$allowed" ]]; then
             echo "Unautorized actor"
             exit 1
