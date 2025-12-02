@@ -1,0 +1,19 @@
+name: ci-project
+
+on:
+  push:
+    branches: [main]
+  pull-request:
+    branches: [main]
+
+jobs:
+  actor-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Check if action is autorized"
+        run: |
+          allowed="Imadlhannouni"
+          if [[ ${{ github.actor }} != $allowd ]]; then
+            echo "Unautorized actor"
+            exit 1
+          fi
